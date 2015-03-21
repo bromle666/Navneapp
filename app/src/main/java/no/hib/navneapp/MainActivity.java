@@ -1,6 +1,7 @@
 package no.hib.navneapp;
 
 import android.app.Fragment;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -20,12 +21,31 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void populatePersonListe() {
-        Person cat = new Person(0, "cat", getResources().getDrawable(R.drawable.cat));
-        Person dog = new Person(0, "dog", getResources().getDrawable(R.drawable.dog));
-        Person fish = new Person(0, "fish", getResources().getDrawable(R.drawable.fish));
+        Person cat = new Person("cat", getResources().getDrawable(R.drawable.cat));
+        Person dog = new Person("dog", getResources().getDrawable(R.drawable.dog));
+        Person fish = new Person("fish", getResources().getDrawable(R.drawable.fish));
         personListe.add(cat);
         personListe.add(dog);
         personListe.add(fish);
+    }
+
+    public Person findPerson(String id) {
+        Person returnPerson = null;
+        for (Person p : personListe) {
+            if (id.equals(p.getNavn())) {
+               returnPerson = p;
+            }
+        }
+
+        return returnPerson;
+    }
+
+    public List<Drawable> getPictures() {
+        List<Drawable> returnList = new ArrayList<Drawable>();
+        for (Person tempPerson : personListe) {
+            returnList.add(tempPerson.getBilde());
+        }
+        return returnList;
     }
 
     public List<String> getNames() {

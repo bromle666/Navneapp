@@ -9,22 +9,17 @@ import java.util.List;
  * Created by bromle on 23.01.2015.
  */
 public class Person {
-    private int id;
     private String navn;
     private Drawable bilde;
 
     public Person() {
     }
 
-    public Person(int id, String navn, Drawable bilde) {
-        this.id = id;
+    public Person(String navn, Drawable bilde) {
         this.navn = navn;
         this.bilde = bilde;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getNavn() {
         return navn;

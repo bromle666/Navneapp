@@ -1,12 +1,14 @@
 package no.hib.navneapp;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -38,6 +40,20 @@ public class Navneliste extends Fragment {
         View returnView = inflater.inflate(R.layout.fragment_navneliste, container, false);
 
         nameList = (ListView) returnView.findViewById(R.id.navneliste);
+        nameList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String str = nameList.getItemAtPosition(position).toString();
+                System.out.println(str);
+                Bundle bundle = new Bundle();
+                bundle.putString("id", str);
+
+
+                VisPerson visPerson = new VisPerson();
+                visPerson.setArguments(bundle);
+                getFragmentManager().beginTransaction().add(R.id.fragment_container, visPerson);
+            }
+        });
 
         List<String> list = ((MainActivity)getActivity()).getNames();
 
