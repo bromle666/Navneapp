@@ -46,12 +46,12 @@ public class Navneliste extends Fragment {
                 String str = nameList.getItemAtPosition(position).toString();
                 System.out.println(str);
                 Bundle bundle = new Bundle();
+
                 bundle.putString("id", str);
-
-
                 VisPerson visPerson = new VisPerson();
                 visPerson.setArguments(bundle);
-                getFragmentManager().beginTransaction().add(R.id.fragment_container, visPerson);
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, visPerson).commit();
+
             }
         });
 
@@ -61,8 +61,7 @@ public class Navneliste extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_list_item_1, list);
 
-        System.out.println(adapter == null);
-        System.out.println(nameList == null);
+
         nameList.setAdapter(adapter);
         return returnView;
     }
