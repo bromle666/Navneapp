@@ -44,7 +44,7 @@ public class Navneliste extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String str = nameList.getItemAtPosition(position).toString();
-                System.out.println(str);
+
                 Bundle bundle = new Bundle();
 
                 bundle.putString("id", str);

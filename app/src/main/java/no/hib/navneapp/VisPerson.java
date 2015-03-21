@@ -1,6 +1,7 @@
 package no.hib.navneapp;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -16,6 +17,9 @@ public class VisPerson extends Fragment {
     Person person;
     TextView tv;
     ImageView iv;
+    Drawable d;
+
+
 
     public VisPerson() {
         // Required empty public constructor
@@ -37,7 +41,8 @@ public class VisPerson extends Fragment {
         tv = (TextView) returnView.findViewById(R.id.visPersonTextView);
         iv = (ImageView) returnView.findViewById(R.id.visPersonImageView);
         tv.setText(person.getNavn());
-        iv.setImageDrawable(person.getBilde());
+        d = person.getBilde();
+        iv.setImageDrawable(d);
 
         // Inflate the layout for this fragment
         return returnView;
