@@ -14,6 +14,8 @@ import java.util.List;
 
 
 public class Navneliste extends Fragment {
+    ListView nameList;
+
 
     public Navneliste() {
         // Required empty public constructor
@@ -23,24 +25,30 @@ public class Navneliste extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ListView nameList = (ListView) getActivity().findViewById(R.id.navneliste);
-        List<String> list = ((MainActivity)getActivity()).getNames();
 
-        System.out.println(this.getActivity());
-        System.out.println(android.R.layout.simple_list_item_1);
-        System.out.println(list.size());
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(),
-                android.R.layout.simple_list_item_1, list);
-        nameList.setAdapter(adapter);
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navneliste, container, false);
+        View returnView = inflater.inflate(R.layout.fragment_navneliste, container, false);
+
+        nameList = (ListView) returnView.findViewById(R.id.navneliste);
+
+        List<String> list = ((MainActivity)getActivity()).getNames();
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(),
+                android.R.layout.simple_list_item_1, list);
+
+        System.out.println(adapter == null);
+        System.out.println(nameList == null);
+        nameList.setAdapter(adapter);
+        return returnView;
     }
 
 
