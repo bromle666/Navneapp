@@ -37,7 +37,15 @@ public class VisPerson extends Fragment {
         View returnView = inflater.inflate(R.layout.fragment_vis_person, container, false);
 
         String argString = getArguments().getString("id");
-        person = ((MainActivity)getActivity()).findPerson(argString);
+        boolean isName = getArguments().getBoolean("isName");
+        if (isName) {
+            person = ((MainActivity)getActivity()).findPerson(argString);
+        }
+        else {
+            person = ((MainActivity)getActivity()).findPersonFromPic(argString);
+
+        }
+
         tv = (TextView) returnView.findViewById(R.id.visPersonTextView);
         iv = (ImageView) returnView.findViewById(R.id.visPersonImageView);
         tv.setText(person.getNavn());

@@ -41,11 +41,13 @@ public class Bildeliste extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String str = picList.getItemAtPosition(position).toString();
-                System.out.println(str);
+
+                
 
                 Bundle bundle = new Bundle();
 
                 bundle.putString("id", str);
+                bundle.putBoolean("isName", false);
                 VisPerson visPerson = new VisPerson();
                 visPerson.setArguments(bundle);
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, visPerson).commit();
@@ -56,8 +58,8 @@ public class Bildeliste extends Fragment {
         List<Drawable> list = ((MainActivity)getActivity()).getPictures();
 
 
-        ArrayAdapter<Drawable> adapter = new ArrayAdapter<Drawable>(this.getActivity(),
-                android.R.layout.simple_list_item_1, list);
+        MyCustomAdapter adapter = new MyCustomAdapter(getActivity(), list);
+
 
 
         picList.setAdapter(adapter);

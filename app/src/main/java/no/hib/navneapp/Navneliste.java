@@ -48,6 +48,7 @@ public class Navneliste extends Fragment {
                 Bundle bundle = new Bundle();
 
                 bundle.putString("id", str);
+                bundle.putBoolean("isName", true);
                 VisPerson visPerson = new VisPerson();
                 visPerson.setArguments(bundle);
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, visPerson).commit();

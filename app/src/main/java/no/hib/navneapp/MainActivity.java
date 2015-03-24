@@ -40,6 +40,17 @@ public class MainActivity extends FragmentActivity {
         return returnPerson;
     }
 
+    public Person findPersonFromPic(String id) {
+        Person returnPerson = null;
+        for (Person p : personListe) {
+            if (id.equals(p.getBilde().toString())) {
+                returnPerson = p;
+            }
+        }
+
+        return returnPerson;
+    }
+
 
 
     public List<Drawable> getPictures() {
