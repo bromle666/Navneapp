@@ -40,6 +40,8 @@ public class MainActivity extends FragmentActivity {
         return returnPerson;
     }
 
+
+
     public List<Drawable> getPictures() {
         List<Drawable> returnList = new ArrayList<Drawable>();
         for (Person tempPerson : personListe) {

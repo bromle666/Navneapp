@@ -41,6 +41,16 @@ public class WelcomeScreen extends Fragment {
             }
         });
 
+        Button bildeListeButton = (Button) returnView.findViewById(R.id.bildelisteButton);
+        bildeListeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bildeliste bildeliste = new Bildeliste();
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, bildeliste).commit();
+            }
+        });
+
         return returnView;
     }
 
