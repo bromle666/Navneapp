@@ -51,6 +51,16 @@ public class WelcomeScreen extends Fragment {
             }
         });
 
+        Button bildequizButton = (Button) returnView.findViewById(R.id.bildequizButton);
+        bildequizButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bildequiz bildequiz = new Bildequiz();
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, bildequiz).commit();
+            }
+        });
+
         return returnView;
     }
 
