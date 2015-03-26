@@ -50,7 +50,7 @@ public class Bildeliste extends Fragment {
                 bundle.putBoolean("isName", false);
                 VisPerson visPerson = new VisPerson();
                 visPerson.setArguments(bundle);
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, visPerson).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, visPerson).addToBackStack(null).commit();
 
             }
         });
