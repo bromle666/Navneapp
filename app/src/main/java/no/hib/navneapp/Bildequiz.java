@@ -74,12 +74,12 @@ public class Bildequiz extends Fragment {
                 counter++;
 
 
-                if (personliste.get(counter) != null) {
+                if (counter < personliste.size()) {
                     currentPerson = personliste.get(counter);
                     imageView.setImageDrawable(currentPerson.getBilde());
                 }
                 else {
-                    Toast.makeText(getActivity(), "Din score ble " + score ,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Din score ble " + score ,Toast.LENGTH_LONG).show();
                 }
             }
         });
