@@ -37,7 +37,7 @@ public class WelcomeScreen extends Fragment {
             public void onClick(View v) {
                 Navneliste navneliste = new Navneliste();
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, navneliste).addToBackStack("to navneliste").commit();
+                        .replace(R.id.fragment_container, navneliste).commit();
             }
         });
 
@@ -47,7 +47,7 @@ public class WelcomeScreen extends Fragment {
             public void onClick(View v) {
                 Bildeliste bildeliste = new Bildeliste();
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, bildeliste).addToBackStack("to bildeliste").commit();
+                        .replace(R.id.fragment_container, bildeliste).commit();
             }
         });
 
@@ -57,7 +57,7 @@ public class WelcomeScreen extends Fragment {
             public void onClick(View v) {
                 Bildequiz bildequiz = new Bildequiz();
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, bildequiz).addToBackStack("to quiz").commit();
+                        .replace(R.id.fragment_container, bildequiz).commit();
             }
         });
 
