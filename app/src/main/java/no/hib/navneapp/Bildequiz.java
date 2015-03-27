@@ -19,6 +19,10 @@ import java.util.List;
 
 public class Bildequiz extends Fragment {
 
+    public int getScore() {
+        return score;
+    }
+
     private int score;
     private int counter;
     private List<Person> personliste;
@@ -87,6 +91,8 @@ public class Bildequiz extends Fragment {
 
         return returnView;
     }
+
+
 
 
 }

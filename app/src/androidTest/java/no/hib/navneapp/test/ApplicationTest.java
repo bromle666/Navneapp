@@ -1,7 +1,11 @@
-package no.hib.navneapp;
+package no.hib.navneapp.test;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
+
+/**
+ * Created by Endre on 26-Mar-15.
+ */
 
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
